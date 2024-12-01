@@ -48,7 +48,7 @@ func getLeftAndRightSide(input string) ([]int, []int) {
 	right := []int{}
 	var lines = strings.Split(input, "\n")
 	for _, line := range lines {
-		sides := strings.Split(line, "   ")
+		sides := strings.Split(line, "   ") // 3 spaces
 
 		left = append(left, stringToInt(sides[0]))
 		right = append(right, stringToInt(sides[1]))
@@ -64,8 +64,6 @@ func stringToInt(input string) int {
 
 func createGroupMapForSide(side []int) map[int]int {
 	var res = make(map[int]int)
-	slices.Sort(side)
-
 	for _, val := range side {
 		res[val]++
 	}
